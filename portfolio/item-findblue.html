@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio | Fengyang Sun</title>
+<link rel='stylesheet' href='css/woocommerce-layout.css' type='text/css' media='all'/>
+<link rel='stylesheet' href='css/woocommerce-smallscreen.css' type='text/css' media='only screen and (max-width: 768px)'/>
+<link rel='stylesheet' href='css/woocommerce.css' type='text/css' media='all'/>
+<link rel='stylesheet' href='css/font-awesome.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' href='css/style.css' type='text/css' media='all'/>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oswald:400,500,700%7CRoboto:400,500,700%7CHerr+Von+Muellerhoff:400,500,700%7CQuattrocento+Sans:400,500,700' type='text/css' media='all'/>
+<link rel='stylesheet' href='css/easy-responsive-shortcodes.css' type='text/css' media='all'/>
+</head>
+<body class="home page page-template page-template-template-portfolio page-template-template-portfolio-php">
+<div id="page">
+	<div class="container">
+		<header id="masthead" class="site-header">
+		<div class="site-branding">
+			<h1 class="site-title"><a href="index.html" rel="home">Fengyang Sun</a></h1>
+			<h2 class="site-description">I'm a Developer</h2>
+		</div>
+		<nav id="site-navigation" class="main-navigation">
+		<button class="menu-toggle">Menu</button>
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+		<div class="menu-menu-1-container">
+			<ul id="menu-menu-1" class="menu">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="index.html">Projects</a></li>				
+				<li><a href="#">Items</a>
+				<ul class="sub-menu">
+					<li><a href="item-morface.html">Morface</a></li>
+					<li><a href="item-iherbal.html">iHerbal</a></li>
+					<li><a href="item-findblue.html">FindBlue</a></li>
+					<li><a href="item-isee.html">iSee</a></li>
+					<li><a href="item-psov.html">PSOv</a></li>
+				</ul>
+				</li>
+			</ul>
+		</div>
+		</nav>
+		</header>
+		<!-- #masthead -->
+		<div id="content" class="site-content">
+			<div id="primary" class="content-area column two-thirds single-portfolio">
+				<main id="main" class="site-main">
+				
+				<article class="portfolio hentry">
+				<header class="entry-header">				
+				<h1 class="entry-title">FindBlue: A game of searching bluest position via trial</h1>
+				<a class='portfoliotype' href='#'>PHP</a>
+				<a class='portfoliotype' href='#'>JavaScript</a>
+				<a class='portfoliotype' href='#'>MySQL</a>
+				<a class='portfoliotype' href='#'>C</a>
+				</header>
+				<div class="entry-content">
+					<h2 class="entry-subtitle">Project Goal</h2>
+					<p>
+						FindBlue is a game to search for the bluest position in the 2D box space (i.e. the position with minimal value). 
+						The dots with different values are colored according to a color bar, where redder means higher value and bluer means smaller value. 
+						Each new trial dot will also change color bar range, so player would know the general landscape and how well she plays so far. 
+						The target of the game is to find the position with smallest value within as few trials as possible, so need some smart moves! 
+					</p>
+					<div class="entry-thumbnail">
+						This screenshot shows all the sample points that the player has drawn. 
+						The bluest point (i.e. the point with smallest value) she found is with 480, which is far from the real minimum 100.
+						<img width="800" height="533" src="img/findblue_cover.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="p1"/>
+					</div>
+					
+					<h2 class="entry-subtitle">Motivation</h2>
+					<p>
+						This system is originally a data acquisition process for simulating human search. 
+						That is, let humans perform the search (optimization) process first, and do a data acquisition work for the future modeling. 
+						In order to make the process of data collection not too boring and suitable for multiple people to collect data at the same time, 
+						I made it an online game in need of search intelligence for practicality and fun.
+					</p>
+					
+					<h2 class="entry-subtitle">Technique</h2>
+					<p>
+						PHP, JS, MySQL, C. 
+						The system adopts a three-layer structure based on BS architecture, the main development language is PHP, the front end is supplemented by html, Javascript (mainly using Echart tools), etc. 
+						In addition to the PHP system itself, the background also needs to call some functional interfaces through sockets. 
+						These functions are provided by C language generated EXE files (functions and code from CEC2017 competition).
+					</p>
+					<h2 class="entry-subtitle">Demo</h2>
+					<p>
+						The following screenshots show how to play the game.
+					</p>
+					<div class="entry-thumbnail">
+						Login at Home page.
+						<p></p>
+						<img width="400" height="270" src="img/findblue_play-1.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="p1"/>
+					</div>
+					
+					<div class="entry-thumbnail">
+						MySpace -> MyGame.
+						<p></p>
+						<img height="270" src="img/findblue_play-2.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="p1"/>
+					</div>
+					
+					<div class="entry-thumbnail">
+						New game with empty canvas and empty color bar.
+						<p></p>
+						<img height="270" src="img/findblue_play-3.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="p1"/>
+					</div>
+					
+					<div class="entry-thumbnail">
+						After the player has clicked at least one point, this point and the four corner points, 5 points in total are evaluated together, 
+						and a new record is created in the database, the color difference begins, and the color bar is activated.
+						<p></p>
+						<img height="270" src="img/findblue_play-4.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="p1"/>
+					</div>
+					
+					<div class="entry-thumbnail">
+						The backend display also indicates that it is indeed calculated, and the fitness values need to be calculated according to x and y values.
+						<p></p>
+						<img height="270" src="img/findblue_play-5.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="p1"/>
+					</div>
+					
+					<div class="entry-thumbnail">
+						As the game going, the player lights up more and more positions, and the results are also shown in the backend terminal.
+						<p></p>
+						<img height="270" src="img/findblue_play-6.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="p1"/>
+					</div>
+					
+					<div class="entry-thumbnail">
+						Drag these cursors or click the icon in the top right corner to zoom in and out the canvas, so as to perform fine search.
+						<p></p>
+						<img height="270" src="img/findblue_play-7.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="p1"/>
+					</div>
+					
+					<div class="entry-thumbnail">
+						Another way to play a game is to continue a game that was not completed before.
+						In the MyGame interface, directly click the corresponding game data ID to enter the game interface, 
+						and all the historical point records will be retrieved from database and loaded onto the canvas firstly. 
+						The following operations are as the same as before.
+						<p></p>
+						<img height="270" src="img/findblue_play-8.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="p1"/>
+					</div>
+				
+					
+					
+				</div>
+				</article>
+				
+				
+				<!-- .navigation -->
+				
+				</main>
+				<!-- #main -->
+			</div>
+			<!-- #primary -->
+			
+
+		</div>
+		<!-- #content -->
+	</div>
+	<!-- .container -->
+	<footer id="colophon" class="site-footer">
+	<div class="container">
+		<div class="site-info">
+			<h1 style="font-family: 'Herr Von Muellerhoff';color: #ccc;font-weight:300;text-align: center;margin-bottom:0;margin-top:0;line-height:1.4;font-size: 46px;">Fengyang Sun</h1>
+			<a target="blank" href="https://www.wowthemes.net/">&copy; Moschino - Free HTML Template by WowThemes.net</a>
+		</div>
+	</div>
+	</footer>
+	<a href="#top" class="smoothup" title="Back to top"><span class="genericon genericon-collapse"></span></a>
+</div>
+<!-- #page -->
+<script src='js/jquery.js'></script>
+<script src='js/plugins.js'></script>
+<script src='js/scripts.js'></script>
+<script src='js/masonry.pkgd.min.js'></script>
+<script src='js/validate.js'></script>
+</body>
+</html>
