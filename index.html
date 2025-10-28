@@ -44,14 +44,12 @@
     }
   
     ol.bracket-list li {
-      counter-increment: myCounter;   /* 每个 li 增加 1 */
-      margin: 6px 0;
+      counter-increment: myCounter;   /* 每个 li 增加 1 */      
     }
   
     ol.bracket-list li::before {
       content: "[" counter(myCounter) "] ";
-      font-weight: bold;
-      color: #0077cc;
+      font-weight: bold;      
     }
   </style>
 
