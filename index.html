@@ -32,24 +32,19 @@
     }
     
     ol.bracket-list {
-      list-style: none;               /* 去掉默认编号 */
-      counter-reset: myCounter;     /* 设置初始值0 */
+      list-style: none;
+      counter-reset: myCounter;
       padding-left: 0;
     }
   
-    /* 使用 reversed 时，让第一个 <li> 计算出最大编号 */
-    ol.bracket-list[reversed] {
-      display: flex;
-      flex-direction: column-reverse; /* 倒转显示顺序 */
-    }
-  
     ol.bracket-list li {
-      counter-increment: myCounter;   /* 每个 li 增加 1 */      
+      counter-increment: myCounter;
     }
   
     ol.bracket-list li::before {
       content: "[" counter(myCounter) "] ";
-      font-weight: bold;      
+      font-weight: bold;
+      color: #0077cc;
     }
   </style>
 
@@ -160,7 +155,7 @@
     <!-- The News Section -->
     <div class="w3-container w3-light-grey w3-padding-32" id="news">
       <h2>News</h2>
-      <ol reversed>
+      <ol reversed class="bracket-list">
         <p>
           <li> 08/2025, 1 journal paper has been accepted by <a
               href="https://www.sciencedirect.com/science/article/pii/S0167739X25003346">Future Generation Computer
